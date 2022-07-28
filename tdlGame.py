@@ -17,7 +17,7 @@ numberRange = range(1,7,1)
 
 fortunes = ['You are going to South Padre Island', 'You are going to Big Bend National Park!', 'You are going to Barton Springs Pool', 'You are going to Guadalupe Mountains National Park',
            'You won a free vacation from TDL \U0001f604']
-print(fortunes)
+
 
 def travelGame():
 #while loop#
