@@ -18,23 +18,53 @@ imageList = [myImg1, myImg2, myImg3, myImg4]
 #to call item in a imageList 0,1,2,3
 #imageList[2]
 
-myLabel = Label(image=myImg)
+myLabel = Label(image=myImg1)
 myLabel.grid(row=0, column=0, columnspan=3)
 
-buttonBack = Button(root, text="<<")
+
+#defining the function of the buttons
+def forward(image_number):
+    global myLabel
+    global button_forward
+    global button_back
+
+    myLabel.grid_forget()
+    myLabel = Label(image=imageList[image_number-1])
+    buttonForward = Button(root, text=">>>", command=lambda: forward(image_number-1))
+    buttonBack = Button(root, text="<<<", command=lambda: back(image_number-1))
+
+    if image_number == 4:
+        buttonForward=Button(root, text=">>", state=DISABLE)
+
+    myLabel.grid(row=0, column=0, columnspan=3)
+    buttonBack.grid(row=1, column=0)
+    buttonForward.grid(row=1, column=2)
+
+
+
+def back():
+    global myLabel
+    global button_forward
+    global button_back
+
+    myLabel.grid_forget()
+    myLabel = Label(image=imageList[image_number-1])
+    buttonForward = Button(root, text=">>>", command=lambda: forward(image_number-1))
+    buttonBack = Button(root, text="<<<", command=lambda: back(image_number-1))
+
+
+buttonBack = Button(root, text="<<", command=back)
 buttonExit = Button(root, text="Exit Program", command=root.quit)
-buttonForward = Button(root, text=">>>")
+buttonForward = Button(root, text=">>>", command=lambda: forward(2))
 
 buttonBack.grid(row=1, column=0)
-buttonExit.grib(row=1, column=1)
-buttonForward.grib(row=1, column=2)
-
-
+buttonExit.grid(row=1, column=1)
+buttonForward.grid(row=1, column=2)
 
 
 #creating an exit button
-buttonQuit = Button(root, text="exit program", command=root.quit)
-buttonQuit.pack()
+#buttonQuit = Button(root, text="exit program", command=root.quit)
+#buttonQuit.pack()
 
 
 root.mainloop()
