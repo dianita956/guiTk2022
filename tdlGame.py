@@ -2,6 +2,7 @@ import random
 import time
 
 #varibles
+'''
 yesno = ['yes','no']
 yesNoGiven = False
 
@@ -17,21 +18,32 @@ numberRange = range(1,7,1)
 
 fortunes = ['You are going to South Padre Island', 'You are going to Big Bend National Park!', 'You are going to Barton Springs Pool', 'You are going to Guadalupe Mountains National Park',
            'You won a free vacation from TDL \U0001f604']
-
+'''
 
 def travelGame():
+    yesno = ['yes','no']
+    yesNoGiven = False
+
+    colorPicked = False
+    colors = ['red','blue','green','purple']
+
+    numberPicked = False
+    numberRange = range(1,7,1)
+
+    fortunes = ['You are going to South Padre Island', 'You are going to Big Bend National Park!', 'You are going to Barton Springs Pool', 'You are going to Guadalupe Mountains National Park',
+               'You won a free vacation from TDL \U0001f604']
+
 #while loop#
 
     while not yesNoGiven:
-      loopQ = input("Would you like me to tell you where your next trip will be?")
-      if loopQ.lower() in ['yes','y']:
-        yesNoGiven = True
-        print("Great! Next please pick a color.")
-
-      elif loopQ.lower() in ['no', 'n']:
-        print("You deserve a trip!")
-      else:
-        print("try again")
+        loopQ = input("Would you like me to tell you where your next trip will be?")
+        if loopQ.lower() in ['yes','y']:
+            yesNoGiven = True
+            print("Great! Next please pick a color.")
+        elif loopQ.lower() in ['no', 'n']:
+            print("You deserve a trip!")
+        else:
+            print("try again")
 
     while not colorPicked:
         colors = ['red','blue','green','purple']
