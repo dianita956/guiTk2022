@@ -1,7 +1,7 @@
 import random
 import time
 
-#varibles
+#varibles# 
 '''
 yesno = ['yes','no']
 yesNoGiven = False
